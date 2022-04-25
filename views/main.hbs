@@ -1,0 +1,50 @@
+{{#if userId}}
+<div class="container">
+  <div class="popular">
+    <h3>Популярные маршруты</h3>
+    <a href="/add"><button type="submit" class="btn btn-warning fixes">Добавить свой
+        маршрут</button></a>
+  </div>
+
+  <div class="card-deck row">
+    {{#each card}}
+      <div class="col-4 mb-4" style="display: flex;">
+        <div class="card">
+          <img src="/img/card.jpeg" class="card-img-top" alt="..." height="400"/>
+          <div class="card-body">
+            <h5 class="card-title">{{nameRoute}}</h5>
+            <p class="card-text">{{description}}</p>
+          </div>
+          <div class="card-footer">
+            <a href="/info/{{id}}" class="btn btn-success">Смотреть</a>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
+{{else}}
+<div class="container">
+  <div class="popular">
+    <h3>Популярные маршруты</h3>
+  </div>
+
+  <div class="card-deck row">
+    {{#each card}}
+      <div class="col-4 mb-4" style="display: flex;">
+        <div class="card">
+          <img src="/img/card.jpeg" class="card-img-top" alt="..." height="400"/>
+          <div class="card-body">
+            <h5 class="card-title">{{nameRoute}}</h5>
+            <p class="card-text">{{description}}</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Обновлено год назад</small>
+            <a href="/info/{{id}}" class="btn btn-success">Смотреть</a>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
+{{/if}}
